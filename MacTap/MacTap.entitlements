@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Required to read the built-in accelerometer via IOHIDManager -->
+	<key>com.apple.security.device.usb</key>
+	<true/>
+
+	<!-- Required for Hardened Runtime + IOKit HID access -->
+	<key>com.apple.security.cs.disable-library-validation</key>
+	<true/>
+
+	<!-- App Sandbox MUST be OFF for IOHIDManager accelerometer access -->
+	<key>com.apple.security.app-sandbox</key>
+	<false/>
+
+	<!-- Allow JIT (needed by some Swift runtime features) -->
+	<key>com.apple.security.cs.allow-jit</key>
+	<true/>
+</dict>
+</plist>
